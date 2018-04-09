@@ -23,7 +23,9 @@ We noticed that p1 and p2 has different coverage, and we want to know to what ex
 We conclude that the coverage of pp is better than p1 and p2 which should contribute to a better assembly which is robust to the data.
 
 #### Accuracy, contiguity, integrity (choose)
-Scaffolds generated from each assembly process were mapped to a published linkage map of *P. maniculatus * (cite;a close relative to *P. leucopus*) of 196 genetic markers with a hybrid of BWA and Bowtie2. We calculate the accuracy with $A=\frac{N_M}{N_A}$, the  precision with $P=\frac{N_C}{N_M}$, the recall with $R=\frac{N_C}{N_A}$, the F1 Score, where $N_M$ represent the number of mapped markers, $N_A$ represent the number of all the markers and $N_C$ represent the number of markers that mapped to correct scaffolds respectively. (Table)
+Scaffolds generated from each assembly process were mapped to a published linkage map of *P. maniculatus * (cite;a close relative to *P. leucopus*) of 196 genetic markers with a hybrid of BWA and Bowtie2. We calculate the accuracy with 
+<img src="http://chart.googleapis.com/chart?cht=tx&chl= A=\frac{N_M}{N_A}" style="border:none;">
+$A=\frac{N_M}{N_A}$, the  precision with $P=\frac{N_C}{N_M}$, the recall with $R=\frac{N_C}{N_A}$, the F1 Score, where $N_M$ represent the number of mapped markers, $N_A$ represent the number of all the markers and $N_C$ represent the number of markers that mapped to correct scaffolds respectively. (Table)
 
 The integrity was calculated using BUSCO v3 (cite). (Table)
 
