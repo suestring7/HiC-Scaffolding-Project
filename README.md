@@ -35,12 +35,8 @@ To be honest, we choose it for less corrections and better score.
 #### Construction of synteny maps
 Synteny maps were created using SynChro (Drillon G, Carbone A and Fischer G (2014)). The amino acid sequence of *P. leucopus* were created by mapping previous(??where you did the annotation) data to the scaffolded genome using blat. The *Rattus Norvegicus* data were downloaded from Genbank. We did some modification using ...
 
-[](./SyntenyBlocks.pdf)
-[](https://github.com/daisyme/HiC-Scaffolding-Project/blob/master/SyntenyBlocks.pdf)
-[](https://raw.githubusercontent.com/daisyme/HiC-Scaffolding-Project/master/SyntenyBlocks.pdf)
+![](./Figures/SyntenyBlocks.png)
 
-try !
-![](https://raw.githubusercontent.com/daisyme/HiC-Scaffolding-Project/master/SyntenyBlocks.pdf)
 ## Supplement
 ##### Find proper threshold
 (Figure S?)
