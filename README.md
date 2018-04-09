@@ -37,7 +37,10 @@ Synteny maps were created using SynChro (Drillon G, Carbone A and Fischer G (201
 
 [](./SyntenyBlocks.pdf)
 [](https://github.com/daisyme/HiC-Scaffolding-Project/blob/master/SyntenyBlocks.pdf)
+[](https://raw.githubusercontent.com/daisyme/HiC-Scaffolding-Project/master/SyntenyBlocks.pdf)
 
+try !
+![](https://raw.githubusercontent.com/daisyme/HiC-Scaffolding-Project/master/SyntenyBlocks.pdf)
 ## Supplement
 ##### Find proper threshold
 (Figure S?)
