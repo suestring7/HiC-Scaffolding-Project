@@ -31,12 +31,12 @@ For each assembly software, we set 3 different set of libraries: p1, p2, pp(the 
 Since we don't know the truth of this genome, we examined the robustness of assembler by comparing the assembly to each other. We plotted dot plots of the scaffold which matches to chromosome 3 between each pair of assemblies within the 6 assemblies that did misjoin correction using MUMmer v4(cite). 
 
 We also summarized the performance of each assembly using BUSCO v3(cite) and other scores like cumulative scaffolds length plot.
-
 >The scripts to run SALSA properly are sorted in `SALSA` folder.
-The scripts to plot multi mummerplot within a plot is `multi-mummerplot.py`
-Usage: 
+
+>The scripts to plot multi mummerplot within a plot is `multi-mummerplot.py`
+>Usage: 
 `python multi-mummerplot.py [OUTPUT_name]`
-Note: The script should be run in the same folder as your MUMmerplot output files. And you need to replace those label names and file names within this file with your own parameters. The output of mummerplot are not always oriented the same, in other words, not always along the main diagnonal. Instead of changing the original fasta file and redoing the nucmer alignment, I simply flipped the plot(make sure that you flip all the related plot in correct axis). There's an example within the script that you may find helpful.
+>Note: The script should be run in the same folder as your MUMmerplot output files. And you need to replace those label names and file names within this file with your own parameters. The output of mummerplot are not always oriented the same, in other words, not always along the main diagnonal. Instead of changing the original fasta file and redoing the nucmer alignment, I simply flipped the plot(make sure that you flip all the related plot in correct axis). There's an example within the script that you may find helpful.
 
 >The script to generate the cumulative scaffolds length plot: `mytools/general/cum_length_plot.py`
 Usage: `python cum_length_plot.py [FAI1.fai] [FAI2.fai] ...`
@@ -46,8 +46,8 @@ Note: In my code, I used the directory's name as the label. `label=faifile.split
 Synteny maps were created using SynChro (Drillon G, Carbone A and Fischer G (2014)). The amino acid sequence of *P. leucopus* were created by mapping previous(??where we did the annotation) data to the scaffolded genome using blat. The *Rattus Norvegicus* data were downloaded from Genbank. We did some modification to make the plot looks more condense.
 
 >The script to condense the output of SynChro: `mytools/SynChro/trans.py`
-Usage:`python trans.py [Sp1.Sp2fSp1.svg] [POSTFIX] [RATIO]` where `[Sp1.Sp2fSp1.svg]` could be found in SynChro's output directory `[Project_path]/21Blocks/Delta2/G1fG2`
-Note: Please change the clist to match your data. And the output would be `S1_POSTFIX` and `S2_POSTFIX`, where `S1_POSTFIX` only removes all the blank blocks that indicate no orthology relationships and `S2_POSTFIX` also condenses the blocks. And I change one line in SynChro's original file `ConvertFasta.py`:
+>Usage:`python trans.py [Sp1.Sp2fSp1.svg] [POSTFIX] [RATIO]` where `[Sp1.Sp2fSp1.svg]` could be found in SynChro's output directory `[Project_path]/21Blocks/Delta2/G1fG2`
+>Note: Please change the clist to match your data. And the output would be `S1_POSTFIX` and `S2_POSTFIX`, where `S1_POSTFIX` only removes all the blank blocks that indicate no orthology relationships and `S2_POSTFIX` also condenses the blocks. And I change one line in SynChro's original file `ConvertFasta.py`:
 From
 `listNameCont.sort()`
 to
@@ -72,6 +72,7 @@ We tried 22-27 as the chromosome number parameter input, and from which we picke
 ##### Coverage matters
 In the original paper, they used 6.7X sequence coverage for a human genome(the GM12878 cell line). (==TODO: what's in ours?==) The result are shown in (Figure: the diagonal and Figure S ). We see that the pp has the best convergence performance while p1 and p2's coverage is not enough to produce the similar result as their downsampled sample.
 (==TODO: generate the figure and put it here==)
+
 ![](./Figures/comp_scf.png)
 We conclude that the coverage of pp is better than p1 and p2 which should contribute to a better assembly that is more robust.
 
