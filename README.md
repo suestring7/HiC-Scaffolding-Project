@@ -14,7 +14,8 @@ Next, we wanted to examine to what extent would the coverage matter. We downsamp
 We visualized the Hi-C contact matrix using juicerbox(cite).
 
 >The script to downsample: `mytools/general/readDownsample.sh`
-Usage: `bash readDownsample.sh [FASTA.gz] [MOD_number] [PREF] [ID]`
+>
+>Usage: `bash readDownsample.sh [FASTA.gz] [MOD_number] [PREF] [ID]`
 
 >The scripts to run 3d-dna properly are sorted in `3d-dna` folder.
 
@@ -34,8 +35,10 @@ We also summarized the performance of each assembly using BUSCO v3(cite) and oth
 >The scripts to run SALSA properly are sorted in `SALSA` folder.
 
 >The scripts to plot multi mummerplot within a plot is `multi-mummerplot.py`
+
 >Usage: 
 `python multi-mummerplot.py [OUTPUT_name]`
+
 >Note: The script should be run in the same folder as your MUMmerplot output files. And you need to replace those label names and file names within this file with your own parameters. The output of mummerplot are not always oriented the same, in other words, not always along the main diagnonal. Instead of changing the original fasta file and redoing the nucmer alignment, I simply flipped the plot(make sure that you flip all the related plot in correct axis). There's an example within the script that you may find helpful.
 
 >The script to generate the cumulative scaffolds length plot: `mytools/general/cum_length_plot.py`
@@ -46,7 +49,9 @@ Note: In my code, I used the directory's name as the label. `label=faifile.split
 Synteny maps were created using SynChro (Drillon G, Carbone A and Fischer G (2014)). The amino acid sequence of *P. leucopus* were created by mapping previous(??where we did the annotation) data to the scaffolded genome using blat. The *Rattus Norvegicus* data were downloaded from Genbank. We did some modification to make the plot looks more condense.
 
 >The script to condense the output of SynChro: `mytools/SynChro/trans.py`
+
 >Usage:`python trans.py [Sp1.Sp2fSp1.svg] [POSTFIX] [RATIO]` where `[Sp1.Sp2fSp1.svg]` could be found in SynChro's output directory `[Project_path]/21Blocks/Delta2/G1fG2`
+
 >Note: Please change the clist to match your data. And the output would be `S1_POSTFIX` and `S2_POSTFIX`, where `S1_POSTFIX` only removes all the blank blocks that indicate no orthology relationships and `S2_POSTFIX` also condenses the blocks. And I change one line in SynChro's original file `ConvertFasta.py`:
 From
 `listNameCont.sort()`
@@ -74,6 +79,7 @@ In the original paper, they used 6.7X sequence coverage for a human genome(the G
 (==TODO: generate the figure and put it here==)
 
 ![](./Figures/comp_scf.png)
+
 We conclude that the coverage of pp is better than p1 and p2 which should contribute to a better assembly that is more robust.
 
 ##### BUSCO analysis and cumulative scaffold length plot
@@ -100,7 +106,9 @@ We plotted the cumulative scaffolds length plot to measure the contiguity of eac
 
 #### These methods do a lot of misjoin correction which are necessary. Meanwhile, questionable
 We noticed that there's a lot of misjoin correction events during the process of assembly. We cast doubt on if those misjoin are real. By comparing assemblies with and without misjoin correction(lower diagonal of Figure ), we see that misjoin correction are necessary to break down contigs and provide chromosome length scaffold. However, there're thousands of local editing to our original assembly which we trust a lot. The assembly looks good in long range, but we are not sure if those local editing(inversions and misordering) would produce errors. 
+
 ![](./Figures/comp_scf.png)
+
 >**Fig 1: Dot plot of differences between assemblies (chr3) using Mummer v4.0.** (==TODO: make the diagonal line thicker==)
 SALSA and 3d-dna are the two different programs. Forward matches are plotted in red, reverse matches in blue. We see that comparisons between 3d-dna assemblies show that they are more consistent with one another than SALSA. The 3d-dna down-sampling on the diagonal shows that Hi-C library coverage can impact scaffolding, perhaps converging when both libraries are combined. The SALSA no modification experiment shows that allowing a scaffolder to split contigs has a large impact on the final assembly.
 
