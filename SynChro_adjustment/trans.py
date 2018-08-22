@@ -60,7 +60,6 @@ for lines in In:
         line=lines.strip()
         sline=line
         if line=="":
-                print("Haha")
                 continue
         if line[1]=="s":
                 pass
