@@ -1,9 +1,6 @@
 ## Materials and Methods
-Animals used in this study were from the *P.leucopus* maintained at University of California, Irvine. Animal care is provided by (??).
-
 #### Scaffolding for *P. Leucopus* (data and implementation of the software)
 ##### Preparing Hi-C library
-Two Hi-C libraries sequenced with Illumina paired end sequencing (??detail) of *Peromyscus Leucopus*, p1, p2 were collected by (??), with coverage (??) and (??) respectively. 
 ##### Implementation of 3d-dna(find chromosome number, coverage)
 3d-dna is a pipeline for Hi-C de novo assembly(Dudchenko et al.,2017.]). Following the instructions in their paper, we used in situ Hi-C data to improve our raw contigs. We set aside the tiny contigs (those shorter than 10kb, as they use 15kb for human) and then used Hi-C data to split, anchor, order, and orient the remaining contigs. We set the iterative number of misjoin correction to be 7, whereas they used 2 for the human genome and 9 for the Aaedes aegypti genome.
 
@@ -119,23 +116,6 @@ In the mapping to the linkage map, there seems to be a fusion between chromosome
 We noticed that in the synteny map, there's a small 'inversion' at the big synteny break. We suspected it to be caused by a misjoin in the original contigs which in turn would lead to the misjoin of two chromosome. We localized the 'inversion' to a contig C397 in our raw assembly. To test if it's the case that there's a misjoin in the C397 that caused the fusion between chromosomes, we did the assembly with the contig397 removed. We tried it with both 24 and 25 as the chromosome number, the fusion still existed. 
 
 These experiments suggest that the fusion might be real. Further experiments are needed to find out the truth.
-==TODO:should I put the HiC figure here? I feel like it's not that high quality, and it can't tell a lot...Just looks nice==
-
-
-
-## Supplementary
-##### Find proper threshold
-(Figure S?)
-
-##### Coverage
-(Figure S?)
-
-
-#### Question
-When to use Scaffolding or Assembly?
-Should it all be past tense or current tense?
-I can't tell why I picked 7 iteratives... It seems I just randomly pick it. 
-TODO: analyse pp0
 
 #### Prerequisites 
 python package:
